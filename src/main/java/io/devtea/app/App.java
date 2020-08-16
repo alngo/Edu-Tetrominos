@@ -32,7 +32,6 @@ class App {
 			public void actionPerformed(final ActionEvent evt) {
 				board.nextTurn();
 			}
-
 		});
 
 		frame.addKeyListener(new KeyListener() {
@@ -68,7 +67,5 @@ class App {
 				createAndShowGUI();
 			}
 		});
-
 	}
-
 }

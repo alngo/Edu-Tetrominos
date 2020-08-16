@@ -1,5 +1,7 @@
 package io.devtea.app;
 
+import java.util.ArrayList;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -12,11 +14,20 @@ class Board extends JComponent {
 
 	private int cols;
 	private int rows;
+	private ArrayList<Piece> pieceList;
+	private Piece activePiece;
 
 	public Board(final int cols, final int rows) {
 		super();
 		setPreferredSize(new Dimension(cols * SCALE, rows * SCALE));
 
+		Location[] locations = new Location[4];
+		locations[0] = new Location(0, 0);
+		locations[1] = new Location(0, 1);
+		locations[2] = new Location(1, 0);
+		locations[3] = new Location(1, 1);
+
+		activePiece = new Piece(locations);
 	}
 
 	public void paintComponent(final Graphics g) {
@@ -24,22 +35,19 @@ class Board extends JComponent {
 		g.setColor(Color.black);
 		g.fillRect(0, 0, getWidth(), getHeight());
 
-		// demonstrate drawing a rectangle
-		g.setColor(Color.blue);
-		g.fillRect(120, 120, 42, 19);
-
+		for (Piece pc : pieceList) {
+			pc.drawBlocks(g, SCALE);
+		}
 	}
 
 	// Move the active piece down one step. Check for collisions.
 	// Check for complete rows that can be destroyed.
 	public void nextTurn() {
+		activePiece.translate(0, -1);
 	}
 
 	public void slide(final int dx) {
-		// TO DO: move the active piece one square in the direction dx
-		// (which has a value -1 or 1):
-
-		// request that paintComponent be called again:
+		activePiece.translate(dx, 0);
 		repaint();
 
 	}
