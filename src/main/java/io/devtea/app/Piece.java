@@ -1,26 +1,43 @@
 package io.devtea.app;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 class Piece {
-	private ArrayList<Location> locations;
+	private Location location;
+	private String type;
 
-	public Piece(ArrayList<Location> locations) {
-		setLocations(locations);
+	private static String[] types = { "bar", "leftL", "rightL", "square", "LeftZ", "rightZ", "Nose" };
+
+	public Piece(String type, Location location) {
+		setType(type);
+		setLocations(location);
 	}
 
 	public void translate(int x, int y) {
-		for (Location loc : locations) {
-			loc.setX(loc.getX() + x);
-			loc.setY(loc.getY() + y);
-		}
+		location.setX(location.getX() + x);
+		location.setY(location.getY() + y);
 	}
 
-	public ArrayList<Location> getLocations() {
-		return locations;
+	public void drawPiece() {
+
 	}
 
-	public void setLocations(ArrayList<Location> locations) {
-		this.locations = locations;
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		if (Arrays.asList(types).contains(type))
+			this.type = type;
+		else
+			throw new IllegalArgumentException("The piece must be a valid type");
+	}
+
+	public Location getLocations() {
+		return location;
+	}
+
+	public void setLocations(Location location) {
+		this.location = location;
 	}
 }
