@@ -16,6 +16,11 @@ class Block {
         this.loc = new Location(x, y);
     }
 
+    public void translate(int x, int y) {
+        this.loc.setX(this.loc.getX + x);
+        this.loc.setY(this.loc.getY + y);
+    }
+
     public void draw(final Graphics g, final int scale) {
         final int px = loc.getX() * scale + 1;
         final int py = loc.getY() * scale + 1;
