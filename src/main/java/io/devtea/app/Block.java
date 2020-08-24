@@ -11,6 +11,16 @@ class Block {
     public static Color[] colors = { Color.red, Color.blue, Color.magenta, Color.orange, Color.green, Color.cyan,
             Color.yellow };
 
+    public Block() {
+        this.colorIndex = 0;
+        this.loc = new Location(0, 0);
+    }
+
+    public Block(final int colorIndex) {
+        this.colorIndex = colorIndex;
+        this.loc = new Location(0, 0);
+    }
+
     public Block(final int colorIndex, final int x, final int y) {
         this.colorIndex = colorIndex;
         this.loc = new Location(x, y);
