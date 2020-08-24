@@ -10,7 +10,7 @@ class Location {
     }
 
     public void setX(int x) {
-        this.x =x;
+        this.x = x;
     }
 
     public void setY(int y) {

@@ -17,8 +17,8 @@ class Block {
     }
 
     public void translate(int x, int y) {
-        this.loc.setX(this.loc.getX + x);
-        this.loc.setY(this.loc.getY + y);
+        loc.setX(loc.getX() + x);
+        loc.setY(loc.getY() + y);
     }
 
     public void draw(final Graphics g, final int scale) {

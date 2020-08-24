@@ -1,30 +1,20 @@
 package io.devtea.app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-class Piece {
-    private ArrayList<Block> blockList;
-    private static String[] types = { "bar", "square", "rightL", "leftL", "rightZ", "leftZ", "podium" };
-    private String type;
+abstract class Piece implements Translatable {
+    private ArrayList<Block> blocks;
 
-    public Piece(String type) {
-        setType(type);
-    }
-
-    private void setType(String type) {
-        if (!Arrays.asList(types).contains(type)) {
-            throw new IllegalArgumentException("Invalid type.");
-        }
-        this.type = type;
+    public Piece(ArrayList<Block> blocks) {
+        this.blocks = blocks;
     }
 
     public ArrayList<Block> getBlocks() {
-        return blockList;
+        return blocks;
     }
 
     public void translate(int x, int y) {
-        for (Block block : blockList) {
+        for (Block block : blocks) {
             block.translate(x, y);
         }
     }
