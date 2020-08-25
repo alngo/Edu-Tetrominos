@@ -1,0 +1,17 @@
+name: "Tools branch naming convention"
+
+on:
+  push:
+    branches-ignore:
+      - development
+      - master
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate branch name requirements
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '(feat|fix|test)\/([a-zA-Z])+'
+          min_length: 6
