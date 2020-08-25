@@ -9,13 +9,13 @@ public class BlockTest {
     @Test
     public void shouldInitiateBlockWithDefaultX() {
         Block block = initiateDefault();
-        assertEquals(0, block.loc.getX());
+        assertEquals(0, block.coord.x);
     }
 
     @Test
     public void shouldInitiateBlockWithDefaultY() {
         Block block = initiateDefault();
-        assertEquals(0, block.loc.getY());
+        assertEquals(0, block.coord.y);
     }
 
     @Test
@@ -33,13 +33,13 @@ public class BlockTest {
     @Test
     public void shouldInitiateBlockWithColorIndexAndDefaultX() {
         Block block = initiateColor();
-        assertEquals(0, block.loc.getX());
+        assertEquals(0, block.coord.x);
     }
 
     @Test
     public void shouldInitiateBlockWithColorIndexAndDefaultY() {
         Block block = initiateColor();
-        assertEquals(0, block.loc.getY());
+        assertEquals(0, block.coord.y);
     }
 
     @Test
@@ -51,27 +51,27 @@ public class BlockTest {
     @Test
     public void shouldInitiateWithX() {
         Block block = initiateAll();
-        assertEquals(2, block.loc.getX());
+        assertEquals(2, block.coord.x);
     }
 
     @Test
     public void shouldInitiateWithY() {
         Block block = initiateAll();
-        assertEquals(3, block.loc.getY());
+        assertEquals(3, block.coord.y);
     }
 
     @Test
     public void shouldTranslateLocationX() {
         Block block = initiateDefault();
         block.translate(1, 2);
-        assertEquals(1, block.loc.getX());
+        assertEquals(1, block.coord.x);
     }
 
     @Test
     public void shouldTranslateLocationY() {
         Block block = initiateDefault();
         block.translate(1, 2);
-        assertEquals(2, block.loc.getY());
+        assertEquals(2, block.coord.y);
     }
 
     /**
@@ -87,6 +87,7 @@ public class BlockTest {
     }
 
     public Block initiateAll() {
-        return new Block(1, 2, 3);
+        Coordinate coord = new Coordinate(2, 3);
+        return new Block(1, coord);
     }
 }

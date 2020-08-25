@@ -5,7 +5,7 @@ import java.util.ArrayList;
 abstract class Piece implements Translatable {
     private ArrayList<Block> blocks;
 
-    protected abstract ArrayList<Block> forgeBlocks(Coordinate xy);
+    protected abstract ArrayList<Block> forgeBlocks(Coordinates xy);
 
     public ArrayList<Block> getBlocks() {
         return blocks;
