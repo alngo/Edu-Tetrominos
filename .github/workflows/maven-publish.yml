@@ -28,3 +28,9 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+
+    - name: Run cobertura
+      run: mvn cobertura:cobertura
+
+    - name: Run codecov script
+      run: bash <(curl -s https://codecov.io/bash)
