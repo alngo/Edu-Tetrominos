@@ -87,7 +87,7 @@ public class BlockTest {
     }
 
     public Block initiateAll() {
-        Coordinate coord = new Coordinate(2, 3);
+        Coordinates coord = new Coordinates(2, 3);
         return new Block(1, coord);
     }
 }

@@ -3,11 +3,11 @@ package io.devtea.app;
 import java.util.ArrayList;
 
 class IPiece extends Piece {
-    public IPiece(Coordinatess coord) {
+    public IPiece(Coordinates coord) {
         super.setBlocks(forgeBlocks(coord));
     }
 
-    protected ArrayList<Block> forgeBlocks(Coordinatess coord) {
+    protected ArrayList<Block> forgeBlocks(Coordinates coord) {
         ArrayList<Block> blocks = new ArrayList<Block>();
 
         blocks.add(new Block(0, coord));

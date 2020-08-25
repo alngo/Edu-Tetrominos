@@ -23,7 +23,7 @@ class Block {
 
     public Block(final int colorIndex, Coordinates coord) {
         this.colorIndex = colorIndex;
-        this.coord = new Coordinates(x, y);
+        this.coord = coord;
     }
 
     public void translate(int x, int y) {

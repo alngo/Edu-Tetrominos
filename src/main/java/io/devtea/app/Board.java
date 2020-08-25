@@ -22,7 +22,8 @@ class Board extends JComponent {
         this.rows = rows;
         setPreferredSize(new Dimension(cols * SCALE, rows * SCALE));
         blockList = new ArrayList<Block>();
-        blockList.add(new Block(0, 5, 5));
+        Coordinates coord = new Coordinates(5, 5);
+        blockList.add(new Block(0, coord));
     }
 
     public void paintComponent(final Graphics g) {
