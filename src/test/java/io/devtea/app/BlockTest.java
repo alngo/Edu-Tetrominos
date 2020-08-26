@@ -1,10 +1,33 @@
 package io.devtea.app;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import java.awt.Graphics;
+import java.awt.Color;
+import static org.mockito.Mockito.*;
 
 public class BlockTest {
+
+    @Test
+    public void shouldCallSetColor() {
+        Block block = initiateDefault();
+        Graphics gMock = mock(Graphics.class);
+        Color expectedColor = Color.red;
+        block.draw(gMock, 16);
+        verify(gMock).setColor(expectedColor);
+    }
+
+    @Test
+    public void shouldCallFillRect() {
+        Block block = initiateDefault();
+        Graphics gMock = mock(Graphics.class);
+        int expectedPx = 1;
+        int expectedPy = 1;
+        int expectedSize = 14;
+        block.draw(gMock, 16);
+        verify(gMock).fillRect(expectedPx, expectedPy, expectedSize, expectedSize);
+    }
 
     @Test
     public void shouldInitiateBlockWithDefaultX() {
