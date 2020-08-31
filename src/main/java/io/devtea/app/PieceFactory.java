@@ -1,6 +1,6 @@
 package io.devtea.app;
 
-final class PieceFactory {
+class PieceFactory {
     public static final Piece getPiece(String type, Coordinates xy) {
         switch (type) {
             case "I":
