@@ -64,4 +64,22 @@ public class CoordinatesTest {
         assertEquals(54, coord.y);
         assertEquals(26, coord.z);
     }
+
+    @Test
+    public void shouldNotChangeInPlaceXY() {
+        final Coordinates coord = new Coordinates(1, 2, 3);
+        coord.add(13, 52, false);
+        assertEquals(1, coord.x);
+        assertEquals(2, coord.y);
+        assertEquals(3, coord.z);
+    }
+
+    @Test
+    public void shouldNotChangeInplaceXYZ() {
+        final Coordinates coord = new Coordinates(1, 2, 3);
+        coord.add(13, 52, 23, false);
+        assertEquals(1, coord.x);
+        assertEquals(2, coord.y);
+        assertEquals(3, coord.z);
+    }
 }
