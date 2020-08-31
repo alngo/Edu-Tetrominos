@@ -2,17 +2,21 @@ package io.devtea.app;
 
 import java.util.ArrayList;
 
-abstract class Piece implements Translatable {
+class Piece implements Translatable {
     private ArrayList<Block> blocks;
 
-    protected abstract ArrayList<Block> forgeBlocks(Coordinates xy);
+    public Piece(Coordinates coord) {
+        this.blocks = forgeBlocks(coord);
+    }
 
     public ArrayList<Block> getBlocks() {
         return blocks;
     }
 
-    public void setBlocks(ArrayList<Block> blocks) {
-        this.blocks = blocks;
+    protected ArrayList<Block> forgeBlocks(Coordinates coord) {
+        ArrayList<Block> blocks = new ArrayList<Block>();
+        blocks.add(new Block(0, coord));
+        return blocks;
     }
 
     public void translate(int x, int y) {
