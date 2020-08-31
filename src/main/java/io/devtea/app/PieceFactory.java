@@ -1,7 +1,7 @@
 package io.devtea.app;
 
-class PieceFactory {
-    public Piece getPiece(String type, Coordinates xy) {
+final class PieceFactory {
+    public static final Piece getPiece(String type, Coordinates xy) {
         switch (type) {
             case "I":
                 return new IPiece(xy);
