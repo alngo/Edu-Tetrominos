@@ -12,9 +12,9 @@ class LPiece extends Piece {
         ArrayList<Block> blocks = new ArrayList<Block>();
 
         blocks.add(new Block(0, coord));
-        blocks.add(new Block(0, coord.add(1, 0)));
-        blocks.add(new Block(0, coord.add(2, 0)));
-        blocks.add(new Block(0, coord.add(3, 0)));
+        blocks.add(new Block(0, coord.add(0, 1)));
+        blocks.add(new Block(0, coord.add(0, 2)));
+        blocks.add(new Block(0, coord.add(1, 2)));
 
         return blocks;
     }

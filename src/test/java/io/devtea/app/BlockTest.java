@@ -12,9 +12,9 @@ import org.mockito.internal.util.Supplier;
 
 public class BlockTest {
 
-    Supplier<Block> defaultBlock = () -> new Block();
-    Supplier<Block> colorBlock = () -> new Block(2);
-    Supplier<Block> fullBlock = () -> new Block(1, new Coordinates(2, 3));
+    private Supplier<Block> defaultBlock = () -> new Block();
+    private Supplier<Block> colorBlock = () -> new Block(2);
+    private Supplier<Block> fullBlock = () -> new Block(1, new Coordinates(2, 3));
 
     @Test
     public void shouldCallSetColor() {
