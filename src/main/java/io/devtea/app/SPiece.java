@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 class SPiece extends Piece {
     public SPiece(Coordinates coord) {
-        super.setBlocks(forgeBlocks(coord));
+        super(coord);
     }
 
+    @Override
     protected ArrayList<Block> forgeBlocks(Coordinates coord) {
         ArrayList<Block> blocks = new ArrayList<Block>();
 
